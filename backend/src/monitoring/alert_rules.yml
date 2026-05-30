@@ -1,0 +1,11 @@
+groups:
+  - name: Alertas-Hydrate-ERP
+    rules:
+      - alert: AltaInstabilidadeHTTP
+        expr: http_request_duration_seconds_bucket{le="2"} > 0.8 # Exemplo: se requisições demoram mais de 2s
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Alta latência detectada no servidor"
+          description: "O backend do Hydrate-ERP está demorando para responder requisições HTTP."

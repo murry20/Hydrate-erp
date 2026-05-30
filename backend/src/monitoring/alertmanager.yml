@@ -1,0 +1,18 @@
+global:
+  smtp_smarthost: "smtp.gmail.com:587"
+  smtp_from: "alertas@sistema.com"
+  smtp_auth_username: "alertas@sistema.com"
+  smtp_auth_password: "sua-senha-de-aplicativo-do-gmail" # Importante: Usar senha de app do Google, não a senha real da conta.
+
+route:
+  receiver: "email-alerts"
+  group_by: ["alertname"]
+  group_wait: 10s
+  group_interval: 5m
+  repeat_interval: 3h
+
+receivers:
+  - name: "email-alerts"
+    email_configs:
+      - to: "admin@sistema.com"
+        send_resolved: true # Avisa por e-mail quando o problema for resolvido!
