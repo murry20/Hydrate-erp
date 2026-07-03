@@ -1,100 +1,64 @@
-# 🥤 Hydrate ERP - Dashboard
+# Hydrate ERP
 
-Um sistema de gerenciamento de pedidos e estoque completo e moderno, desenvolvido com **React + Vite** no frontend e **Node.js + Express** no backend.
+## Visão Geral
 
-## 📋 Visão Geral
+O Hydrate ERP é uma solução de gestão integrada para e-commerce de autopeças, focada no controle de pedidos e inventário em tempo real. O sistema foi projetado para otimizar operações diárias e apoiar a tomada de decisão através de métricas precisas.
 
-O **Hydrate ERP** é uma solução robusta para empresas que precisam gerenciar pedidos, produtos e controlar estoque em tempo real. Com uma interface intuitiva e um backend poderoso, facilita operações diárias e tomadas de decisão.
+## Funcionalidades Principais
 
-## ✨ Principais Funcionalidades
+- **Controle de Acesso (RBAC):** Sistema de autenticação com níveis de permissão granulares.
+- **Dashboard Executivo:** Monitoramento centralizado de KPIs e métricas operacionais.
+- **Gestão de Inventário:** Controle de estoque em tempo real.
+- **Gestão de Pedidos:** Fluxo completo para criação, edição e rastreamento de pedidos.
+- **Gestão de Produtos:** CRUD completo para catálogo de peças.
 
-- 🔐 **Autenticação e Controle de Acesso (RBAC)** - Sistema de usuários com níveis de permissão
-- 📊 **Dashboard Executivo** - Visualização rápida de métricas e KPIs
-- 📦 **Gerenciamento de Produtos** - CRUD completo de produtos
-- 🛒 **Gerenciamento de Pedidos** - Criação, edição e acompanhamento de pedidos
-- 📈 **Controle de Estoque** - Monitoramento em tempo real de inventário
-- 🎨 **Interface Responsiva** - Design moderno com CSS Modules
-- ⚡ **Otimizado** - Vite para build rápido
-
-## 🛠️ Tecnologias
+## Stack Tecnológica
 
 ### Frontend
 
-- **React 18** - Biblioteca UI
-- **Vite** - Build tool
-- **CSS Modules** - Estilização modular
-- **ESLint** - Linting
+- **Framework:** React 18
+- **Build Tool:** Vite
+- **Estilização:** CSS Modules
+- **Qualidade de Código:** ESLint
 
 ### Backend
 
-- **Node.js** - Runtime JavaScript
-- **Express.js** - Framework web
-- **SQL** - Banco de dados relacional
+- **Runtime:** Node.js (v18+)
+- **Framework:** Express.js
+- **Persistência:** SQL (MySQL/PostgreSQL)
 
-## 📦 Instalação
+## Instalação
 
 ### Pré-requisitos
 
-- Node.js (v14 ou superior)
-- npm ou yarn
-- MySQL ou PostgreSQL
+- Node.js (v18 ou superior)
+- Gerenciador de pacotes npm ou yarn
+- Servidor de banco de dados (MySQL ou PostgreSQL)
 
-### Frontend
+### Configuração do Frontend
 
-```bash
-cd frontend
-npm install
-npm run dev
-```
+1. Navegue até a pasta: `cd frontend`
+2. Instale as dependências: `npm install`
+3. Inicie o ambiente de desenvolvimento: `npm run dev`
 
-Acesse: `http://localhost:5173`
+### Configuração do Backend
 
-### Backend
+1. Navegue até a pasta: `cd backend`
+2. Instale as dependências: `npm install`
+3. Configure o arquivo `.env` (baseado no template abaixo)
+4. Inicie o servidor: `node server.js`
 
-```bash
-cd backend
-npm install
-node server.js
-```
+### Banco de Dados
 
-O servidor rodará em `http://localhost:3000` (ou porta configurada)
-
-## 🗄️ Banco de Dados
-
-Para configurar o banco de dados:
+Para inicializar a estrutura, execute o schema no seu cliente SQL:
 
 ```bash
-cd database
-# Execute o arquivo schema.sql no seu cliente SQL
-mysql -u usuario -p banco_dados < schema.sql
+mysql -u [usuario] -p [banco_dados] < database/schema.sql
 ```
 
-## 📁 Estrutura do Projeto
+## Configuração de Ambiente (Backend)
 
-```
-hydrate-erp/
-├── frontend/              # Aplicação React
-│   ├── src/
-│   │   ├── components/   # Componentes reutilizáveis
-│   │   ├── pages/        # Páginas principais
-│   │   ├── layouts/      # Layouts
-│   │   └── assets/       # Imagens e arquivos estáticos
-│   └── package.json
-├── backend/               # API Express
-│   ├── controllers/      # Lógica de negócio
-│   ├── routes/           # Definição de rotas
-│   ├── services/         # Serviços auxiliares
-│   └── server.js
-├── database/             # Scripts SQL
-│   └── schema.sql
-└── README.md
-```
-
-## 🔧 Configuração
-
-### Variáveis de Ambiente (Backend)
-
-Crie um arquivo `.env` na pasta `backend`:
+Crie um arquivo `.env` na pasta `/backend` com as seguintes variáveis:
 
 ```env
 PORT=3000
@@ -105,67 +69,33 @@ DB_NAME=hydrate_db
 JWT_SECRET=sua_chave_secreta
 ```
 
-## 🚀 Scripts Disponíveis
+_Nota: Nunca versionar o arquivo .env no repositório._
+
+## Scripts Disponíveis
 
 ### Frontend
 
-- `npm run dev` - Inicia servidor de desenvolvimento
-- `npm run build` - Cria build para produção
-- `npm run preview` - Visualiza build de produção
-- `npm run lint` - Executa linter
+- `npm run dev`: Inicia o servidor de desenvolvimento.
+- `npm run build`: Gera o build de produção.
+- `npm run lint`: Executa a análise estática de código.
 
 ### Backend
 
-- `node server.js` - Inicia o servidor
-- `node scaffold.js` - Configura estrutura inicial
-- `node scaffold_rbac.js` - Configura RBAC
-- `node scaffold_friday.js` - Dados de exemplo
+- `node server.js`: Inicia a API.
+- `node scaffold.js`: Inicializa a estrutura do projeto.
+- `node scaffold_rbac.js`: Configura as permissões de acesso.
+- `node scaffold_friday.js`: Injeta dados de demonstração.
 
-## 📚 API Endpoints
+## Roadmap de Desenvolvimento
 
-### Autenticação
+- [ ] Integração com API do WooCommerce.
+- [ ] Implementação de busca avançada por código OEM.
+- [ ] Módulo de geração de etiquetas de envio.
 
-- `POST /api/auth/login` - Login
-- `POST /api/auth/logout` - Logout
+## Licença
 
-### Produtos
+Distribuído sob a licença MIT. Consulte `LICENSE` para mais informações.
 
-- `GET /api/products` - Listar produtos
-- `POST /api/products` - Criar produto
-- `PUT /api/products/:id` - Atualizar produto
-- `DELETE /api/products/:id` - Deletar produto
+## Contato
 
-### Pedidos
-
-- `GET /api/orders` - Listar pedidos
-- `POST /api/orders` - Criar pedido
-- `PUT /api/orders/:id` - Atualizar pedido
-- `DELETE /api/orders/:id` - Deletar pedido
-
-### Dashboard
-
-- `GET /api/dashboard/metrics` - Métricas gerais
-
-## 🤝 Como Contribuir
-
-1. Faça um **Fork** do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um **Pull Request**
-
-## 📄 Licença
-
-Este projeto está sob a licença **MIT** - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
-## 👤 Autor
-
-**murry20** - [GitHub](https://github.com/murry20)
-
-## 📧 Suporte
-
-Para dúvidas ou sugestões, abra uma [Issue](../../issues) no repositório.
-
----
-
-**Desenvolvido com ❤️ por murry20**
+Desenvolvido por **murry20**. Para dúvidas ou relatórios de bugs, por favor, abra uma _Issue_ no repositório.

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Dependencies
 node_modules/
 npm-debug.log
@@ -41,3 +42,6 @@ logs/
 # Temp files
 *.tmp
 temp/
+=======
+node_modules
+>>>>>>> 3fbeb5cf2c50103ebb4117a926017927c1324c2e

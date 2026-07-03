@@ -1,0 +1,20 @@
+global:
+  scrape_interval: 15s # Tempo em que ele busca métricas no backend
+
+# FALTAVA: Dizer para o Prometheus onde enviar os alertas gerados
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+            - "alertmanager:9093"
+
+# FALTAVA: Apontar o arquivo que diz QUANDO a regra de alerta é disparada
+rule_files:
+  - "alert_rules.yml"
+
+scrape_configs:
+  - job_name: "backend"
+    static_configs:
+      # Se o seu Node roda na máquina local fora do Docker, use 'host.docker.internal:5000'
+      # Se o seu Node roda em container no mesmo docker-compose, use 'backend:5000'
+      - targets: ["host.docker.internal:5000"]

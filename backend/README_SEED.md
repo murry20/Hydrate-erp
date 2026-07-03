@@ -1,13 +1,14 @@
-Seed e migração (backend)
-=========================
+# Seed e migração (backend)
 
 Esses scripts ajudam a aplicar o `database/schema.sql` e a criar usuários iniciais no banco remoto.
 
 Pré-requisitos
+
 - Ter `node` e `npm` instalados.
 - Ter a variável de ambiente `DATABASE_URL` configurada apontando para o Postgres remoto.
 
 Comandos
+
 - Instalar dependências do backend (uma vez):
 
 ```bash
@@ -34,5 +35,6 @@ PROPRIETARIO_EMAIL="seu-email@dominio.com" PROPRIETARIO_PASSWORD="senha123" DATA
 ```
 
 Notas de segurança
+
 - Não comite `DATABASE_URL` ou senhas no repositório.
 - Depois de criar as contas, peça para mudar senhas ou implemente reset por e-mail em produção.
