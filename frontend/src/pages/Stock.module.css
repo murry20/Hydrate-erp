@@ -1,0 +1,32 @@
+.page {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+}
+
+.stockBadge {
+  display: inline-flex;
+  padding: 4px 12px;
+  border-radius: 99px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background-color: rgba(59, 130, 246, 0.1);
+  color: var(--accent-color);
+}
